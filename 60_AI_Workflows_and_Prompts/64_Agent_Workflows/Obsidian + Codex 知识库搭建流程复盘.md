@@ -195,16 +195,16 @@
 
 3. **实现路径确认**
    - 初步方案包括 B1 手动触发、B2 脚本辅助、B3 定时自动化。
-   - 最终选择直接进入 B3：定时自动化 + 每周维护报告。
+   - 最终选择直接进入 B3：定时自动化 + 周期性维护报告。
 
 4. **运行频率确认**
-   - 每日 Inbox Triage：`18:00`
-   - 每周 Vault Maintenance：每周一 `18:15`
+   - Inbox Triage：每 4 天 `18:00`
+   - Vault Maintenance：每两周周一 `18:15`
    - 时区：`Asia/Shanghai`
 
 5. **报告落点确认**
-   - 每日报告追加到 `00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD.md`
-   - 每周维护报告写入 `00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD - Weekly Vault Maintenance.md`
+   - 整理报告追加到 `00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD.md`
+   - 双周维护报告写入 `00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD - Biweekly Vault Maintenance.md`
 
 6. **设计分段确认**
    - 自动化架构与数据流。
@@ -498,7 +498,7 @@
 1. 权限模式：建议 / 半自动 / 全自动。
 2. 风险边界：高风险必须人工确认，低风险可自动整理。
 3. 自动化路径：手动触发 / 脚本辅助 / 定时自动化。
-4. 运行时间：每日整理、每周维护。
+4. 运行时间：每 4 天整理、每两周维护。
 5. 报告位置：日报、周报、审计日志。
 6. 失败处理：读取失败、分类不足、标签冲突、重名冲突。
 
@@ -521,8 +521,8 @@
 跳出 Superpowers 流程，直接按已确认的设计实施。
 
 请创建两个 Codex cron 自动化：
-1. Daily Inbox Triage：每日 [时间] 扫描 Inbox；
-2. Weekly Vault Maintenance：每周 [星期] [时间] 扫描全库维护。
+1. Inbox Triage：每 [N] 天 [时间] 扫描 Inbox；
+2. Biweekly Vault Maintenance：每 [N] 周 [星期] [时间] 扫描全库维护。
 
 要求：
 - 自动化 prompt 必须要求先读 AGENTS.md、WORKSPACE_RULES.md、Global Tag List 和自动化设计 spec；

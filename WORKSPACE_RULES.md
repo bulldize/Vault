@@ -72,13 +72,13 @@ YYYYMMDD - [学科大类/项目] - 核心概念/论文简写.md
 
 ### 7. 定期清理
 
-每周自动扫描空文件、孤立节点（无任何双链的正式笔记）以及无效附件，并输出清理建议清单至 `00_Inbox_and_Journal/01_Daily_Notes`。
+每两周自动扫描空文件、孤立节点（无任何双链的正式笔记）以及无效附件，并输出清理建议清单至 `00_Inbox_and_Journal/01_Daily_Notes`。
 
 ## 五、Codex 定时自动化规则
 
-### 1. Daily Inbox Triage
+### 1. Inbox Triage
 
-每日 `18:00`（Asia/Shanghai）扫描 `00_Inbox_and_Journal/02_Inbox`。
+每 4 天 `18:00`（Asia/Shanghai）扫描 `00_Inbox_and_Journal/02_Inbox`。
 
 允许自动处理低风险内容：
 
@@ -97,7 +97,7 @@ YYYYMMDD - [学科大类/项目] - 核心概念/论文简写.md
 - 患者资料、未脱敏医学数据、来源不明医学影像、医学诊断或临床结论。
 - 新主题首次迁入正式目录。
 
-每日报告追加到：
+整理报告追加到：
 
 ```text
 00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD.md
@@ -109,9 +109,9 @@ YYYYMMDD - [学科大类/项目] - 核心概念/论文简写.md
 99_Meta/Automation Logs/YYYY-MM-DD - Inbox Triage Log.md
 ```
 
-### 2. Weekly Vault Maintenance
+### 2. Vault Maintenance
 
-每周一 `18:15`（Asia/Shanghai）扫描全库并生成维护报告。
+每两周周一 `18:15`（Asia/Shanghai）扫描全库并生成维护报告。
 
 扫描范围：
 
@@ -125,13 +125,13 @@ YYYYMMDD - [学科大类/项目] - 核心概念/论文简写.md
 周报写入：
 
 ```text
-00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD - Weekly Vault Maintenance.md
+00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD - Biweekly Vault Maintenance.md
 ```
 
 审计日志写入：
 
 ```text
-99_Meta/Automation Logs/YYYY-MM-DD - Weekly Maintenance Log.md
+99_Meta/Automation Logs/YYYY-MM-DD - Biweekly Maintenance Log.md
 ```
 
 ### 3. 自动化禁止事项

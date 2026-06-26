@@ -6,11 +6,11 @@ This design specifies a semi-automatic Obsidian vault governance system for `/Us
 
 The system follows the B3 strategy:
 
-- Daily Inbox triage at `18:00` Asia/Shanghai.
-- Weekly vault maintenance every Monday at `18:15` Asia/Shanghai.
+- Inbox triage every 4 days at `18:00` Asia/Shanghai.
+- Vault maintenance every 2 weeks on Monday at `18:15` Asia/Shanghai.
 - Low-risk content can be automatically organized.
 - High-risk content remains in Inbox and receives a confirmation proposal.
-- All actions are reported in daily notes or weekly reports.
+- All actions are reported in daily notes or biweekly maintenance reports.
 
 This document is a design spec only. It does not implement automations, scripts, or file moves.
 
@@ -27,7 +27,7 @@ Automation must not modify these source-of-truth files unless the user explicitl
 
 ## Architecture
 
-### Daily Inbox Triage
+### Inbox Triage
 
 Input:
 
@@ -38,7 +38,7 @@ Input:
 Schedule:
 
 ```text
-Daily 18:00 Asia/Shanghai
+Every 4 days at 18:00 Asia/Shanghai
 ```
 
 Flow:
@@ -47,7 +47,7 @@ Flow:
 00_Inbox_and_Journal/02_Inbox
         |
         v
-[Daily Inbox Triage]
+[Inbox Triage]
         |
         +--> Low Risk: automatic migration
         |       - rename
@@ -66,12 +66,12 @@ Flow:
 00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD.md
 ```
 
-### Weekly Vault Maintenance
+### Vault Maintenance
 
 Schedule:
 
 ```text
-Every Monday 18:15 Asia/Shanghai
+Every 2 weeks on Monday at 18:15 Asia/Shanghai
 ```
 
 Flow:
@@ -80,7 +80,7 @@ Flow:
 Vault root
         |
         v
-[Weekly Vault Maintenance]
+[Vault Maintenance]
         |
         +--> empty file scan
         +--> orphan note scan
@@ -89,7 +89,7 @@ Vault root
         +--> high-risk backlog scan
         |
         v
-00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD - Weekly Vault Maintenance.md
+00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD - Biweekly Vault Maintenance.md
 ```
 
 ## Risk Strategy
@@ -181,7 +181,7 @@ All new unstructured material goes to:
 00_Inbox_and_Journal/02_Inbox
 ```
 
-Daily triage scans only this Inbox for migration. It does not proactively migrate content from formal directories.
+Inbox triage scans only this Inbox for migration. It does not proactively migrate content from formal directories.
 
 ### Naming Rule
 
@@ -225,7 +225,7 @@ summary: "100 字以内摘要。"
 
 The exact tags must follow `99_Meta/Global Tag List.md`.
 
-High-risk files are not modified; their metadata suggestions appear only in the daily report.
+High-risk files are not modified; their metadata suggestions appear only in the Inbox triage report.
 
 ### Body Structure
 
@@ -353,7 +353,7 @@ Must satisfy:
 
 ### High-Risk Routing Proposal
 
-High-risk content remains in Inbox. The daily report includes:
+High-risk content remains in Inbox. The Inbox triage report includes:
 
 ```md
 ### 待确认迁移：文件名
@@ -368,7 +368,7 @@ High-risk content remains in Inbox. The daily report includes:
 
 ## Report Formats
 
-### Daily Inbox Triage Report
+### Inbox Triage Report
 
 Location:
 
@@ -419,18 +419,18 @@ Rules:
 - Do not paste long source text into reports.
 - For high-risk materials, report proposals only.
 
-### Weekly Vault Maintenance Report
+### Biweekly Vault Maintenance Report
 
 Location:
 
 ```text
-00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD - Weekly Vault Maintenance.md
+00_Inbox_and_Journal/01_Daily_Notes/YYYY-MM-DD - Biweekly Vault Maintenance.md
 ```
 
 Structure:
 
 ```md
-# Weekly Vault Maintenance - YYYY-MM-DD
+# Biweekly Vault Maintenance - YYYY-MM-DD
 
 ## Summary
 
@@ -536,7 +536,7 @@ When a new task starts or a task is blocked, Codex should retrieve context in th
 3. Relevant domain index files.
 4. `60_AI_Workflows_and_Prompts`
 5. Historical `Inbox Triage Report` sections.
-6. Historical `Weekly Vault Maintenance` reports.
+6. Historical `Biweekly Vault Maintenance` reports.
 7. Relevant project notes, reproduction records, debug records, and theory drafts.
 
 Typical retrieval goals:
@@ -608,7 +608,7 @@ YYYYMMDD - Domain - Title.md
 YYYYMMDD - Domain - Title - 2.md
 ```
 
-Record the conflict and final path in the daily report.
+Record the conflict and final path in the Inbox triage report.
 
 ### Automation Interruption
 
@@ -618,7 +618,7 @@ Already migrated files are not reprocessed if:
 
 - They are no longer in Inbox.
 - Their YAML contains `source: inbox`.
-- They appear in a prior daily migration report.
+- They appear in a prior Inbox triage migration report.
 
 ## Audit Logs
 
@@ -626,7 +626,7 @@ Each run should create a light audit log:
 
 ```text
 99_Meta/Automation Logs/YYYY-MM-DD - Inbox Triage Log.md
-99_Meta/Automation Logs/YYYY-MM-DD - Weekly Maintenance Log.md
+99_Meta/Automation Logs/YYYY-MM-DD - Biweekly Maintenance Log.md
 ```
 
 Logs record:
