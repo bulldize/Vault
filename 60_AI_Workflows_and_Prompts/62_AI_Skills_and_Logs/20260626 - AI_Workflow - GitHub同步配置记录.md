@@ -54,11 +54,12 @@ SHA256:RQGZ1B58lvqiYwc0AvfAHJ1NwzTTZ65gpTDKHK6bBR0
 
 ## 后续处理
 
-当前远端已正常可用。手动同步命令：
+当前远端已正常可用。手动推送命令：
 
 ```bash
 cd /Users/bulldize/Desktop/Obsidian
 git push
 ```
 
-3 天一次的 Codex 自动化会继续执行 commit + push。
+3 天一次的 Codex 自动化只做本地 Git 快照与日志记录，不自动 `push`。
+需要推送到远端时，必须由用户明确下达“推到远端”之类的命令。
