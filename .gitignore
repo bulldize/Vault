@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Local runtime/cache directories
+.uv-cache/
+.uv-tools/
+
+# Obsidian local UI state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Local REST API secrets
+.obsidian/plugins/obsidian-local-rest-api/data.json
+obsidian-mcp.codex.toml
+scripts/configure-obsidian-mcp.sh
+
+# Large/local assets can be added intentionally with git add -f when needed.
+99_Meta/Assets/**/*.zip
+99_Meta/Assets/**/*.tar
+99_Meta/Assets/**/*.tar.gz
+99_Meta/Assets/**/*.7z
+99_Meta/Assets/**/*.nii
+99_Meta/Assets/**/*.nii.gz
+99_Meta/Assets/**/*.dcm
+99_Meta/Assets/**/*.h5
+99_Meta/Assets/**/*.hdf5
