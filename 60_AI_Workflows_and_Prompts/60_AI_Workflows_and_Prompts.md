@@ -2,6 +2,11 @@
 
 AI 工具经验、提示词库、个人系统指令与自动化流程。
 
+## 能力与协作入口
+
+- [[20260719 - AI_Workflow - AI协作能力地图|AI 协作能力地图]]
+- [[64_Agent_Workflows/20260719 - AI_Workflow - Codex有效协作记录|Codex 有效协作记录]]
+
 ## 子目录
 
 - [[61_Prompt_Library/61_Prompt_Library|61 Prompt Library]]：用于不同任务的高效 Prompt。

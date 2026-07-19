@@ -2,6 +2,11 @@
 
 Obsidian vault 入口。
 
+## 研究能力与协作
+
+- [[99_Meta/20260719 - Meta - 研究能力地图|研究能力地图]]
+- [[60_AI_Workflows_and_Prompts/64_Agent_Workflows/20260719 - AI_Workflow - Codex有效协作记录|Codex 有效协作记录]]
+
 ## 快速入口
 
 - [[00_Inbox_and_Journal/00_Inbox_and_Journal|00 Inbox and Journal]]

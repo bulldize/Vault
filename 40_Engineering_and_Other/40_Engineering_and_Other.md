@@ -2,6 +2,10 @@
 
 工程项目、仿真任务、算法调研与基础设施管理。
 
+## 能力入口
+
+- [[20260719 - Engineering - 工程仿真能力地图|工程仿真能力地图]]
+
 ## 子目录
 
 - [[41_Nuclear_Simulation/41_Nuclear_Simulation|41 Nuclear Simulation]]：稳压器仿真任务，聚焦 Simulink 数值求解与 PID 控制。

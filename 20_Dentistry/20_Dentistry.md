@@ -2,6 +2,10 @@
 
 口腔医学、医学图像处理、几何提取与 AI 方法的知识库。
 
+## 能力入口
+
+- [[20260719 - Dentistry - 口腔AI能力地图|口腔 AI 能力地图]]
+
 ## 子目录
 
 - [[21_Orthodontics_Basics/21_Orthodontics_Basics|21 Orthodontics Basics]]：正畸共用知识库。
